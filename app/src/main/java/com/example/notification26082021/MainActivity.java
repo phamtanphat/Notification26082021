@@ -3,6 +3,7 @@ package com.example.notification26082021;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationManager;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
                 builder.setContentTitle("Thông báo");
                 builder.setContentText("Ứng dụng có phiên bản cập nhật mới!!");
 
+                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                notificationManager.notify(1,builder.build());
             }
         });
     }
